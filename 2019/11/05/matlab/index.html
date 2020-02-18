@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gaoxinlxl.github.io","root":"/","scheme":"Mist","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="MATLAB的名称源自Matrix Laboratory，它是一种科学计算软件，专门以矩阵的形式处理数据。  　　 大二测绘系开设过matlab课程，除了认真上过第一节课，就再也没学了，哪怕是最后的期末作业，都是抄的。当然也就完全体会不到matlab的用处，对它的认识仅仅停留在“matlab”的六个字母上。三年后（2019-9-19），莽莽撞撞参加了数学建模竞赛，负责编程任务，又重新学习了一下m">
+<meta name="keywords" content="notes,matlab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB">
+<meta property="og:url" content="http:&#x2F;&#x2F;gaoxinlxl.github.io&#x2F;2019&#x2F;11&#x2F;05&#x2F;matlab&#x2F;index.html">
+<meta property="og:site_name" content="GaoXin">
+<meta property="og:description" content="MATLAB的名称源自Matrix Laboratory，它是一种科学计算软件，专门以矩阵的形式处理数据。  　　 大二测绘系开设过matlab课程，除了认真上过第一节课，就再也没学了，哪怕是最后的期末作业，都是抄的。当然也就完全体会不到matlab的用处，对它的认识仅仅停留在“matlab”的六个字母上。三年后（2019-9-19），莽莽撞撞参加了数学建模竞赛，负责编程任务，又重新学习了一下m">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;05&#x2F;bGEpKN8FActwvTY.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;05&#x2F;vc2Rdq9EKlSaLZJ.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;05&#x2F;kKHt139zIDupEvs.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;05&#x2F;bCHnFdloh5Kif3J.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;05&#x2F;M36sh7rfcCTFtDK.png">
+<meta property="og:updated_time" content="2020-02-17T10:03:28.472Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;05&#x2F;bGEpKN8FActwvTY.png">
+
+<link rel="canonical" href="http://gaoxinlxl.github.io/2019/11/05/matlab/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>MATLAB | GaoXin</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GaoXin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">时间不在于你拥有多少，而在于你怎样使用。</p>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">21</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">13</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://gaoxinlxl.github.io/2019/11/05/matlab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/2.jpg">
+      <meta itemprop="name" content="GaoXin">
+      <meta itemprop="description" content="时间不在于你拥有多少，而在于你怎样使用。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GaoXin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MATLAB
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-05 14:10:31" itemprop="dateCreated datePublished" datetime="2019-11-05T14:10:31+08:00">2019-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-17 18:03:28" itemprop="dateModified" datetime="2020-02-17T18:03:28+08:00">2020-02-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>MATLAB的名称源自<code>Matrix Laboratory</code>，它是一种科学计算软件，专门以矩阵的形式处理数据。</p>
+</blockquote>
+<p>　　 大二测绘系开设过matlab课程，除了认真上过第一节课，就再也没学了，哪怕是最后的期末作业，都是抄的。当然也就完全体会不到matlab的用处，对它的认识仅仅停留在“matlab”的六个字母上。三年后（2019-9-19），莽莽撞撞参加了数学建模竞赛，负责编程任务，又重新学习了一下matlab的基本语法。</p>
+<a id="more"></a>
+
+<p>　　当然要完成数学建模上的问题，仅靠基本语法肯定是不够的。但更多更复杂的东西，没有必要去深究。单就比赛来说（或者其他某些类似场景），目的在于解决问题，重点关心为什么这样解，怎么解，保证解的正确就行。其中“怎么解”就要把抽象思维具体化、数学语言程序化。要求就是一句话，会用就行，对于具体实现，不必深究。</p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><pre class=" language-matlab"><code class="language-matlab">clear y 将变量y从变量空间中去掉
+clear 将所有变量清空
+clc 仅仅是清空屏幕
+<span class="token comment" spellcheck="true">% 注释</span>
+ctrl<span class="token operator">+</span>R 批量注释
+ctrl<span class="token operator">+</span>T 批量取消注释</code></pre>
+<pre class=" language-matlab"><code class="language-matlab">disp（）：屏幕打印
+input（）：输入函数
+strcat（）：合并字符串
+num2str（）：数字<span class="token operator">-</span><span class="token operator">></span>字符串</code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span> 产生从<span class="token number">0</span>到<span class="token number">2</span>的均匀的<span class="token number">5</span>个点
+<span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> 初始化<span class="token number">2</span>行<span class="token number">3</span>列全为<span class="token number">0</span>的矩阵
+<span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 初始化全为<span class="token number">1</span>的<span class="token number">2</span>阶的矩阵
+<span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 初始化<span class="token number">2</span>阶单位阵
+Inf 无穷大</code></pre>
+<pre class=" language-matlab"><code class="language-matlab">F <span class="token operator">=</span> A<span class="token operator">.*</span>B 点乘，对应位置相乘，区别于矩阵乘法
+F <span class="token operator">=</span> A<span class="token operator">./</span>B 点除，对应位置相除
+F <span class="token operator">=</span> A<span class="token operator">/</span>B <span class="token operator">=</span> A <span class="token operator">*</span> B<span class="token operator">^</span><span class="token operator">-</span><span class="token number">1</span> ，就是A<span class="token operator">*</span>B的逆
+F <span class="token operator">=</span> A<span class="token operator">^</span><span class="token number">2</span> <span class="token operator">=</span> A<span class="token operator">*</span>A
+F <span class="token operator">=</span> A<span class="token operator">.^</span><span class="token number">2</span> <span class="token operator">=</span> A<span class="token operator">.*</span>A</code></pre>
+<pre class=" language-matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> 取A矩阵的第<span class="token number">1</span>行<span class="token number">3</span>列
+y <span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span> 相当于 y <span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">)</span> 取第二行
+Z <span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">)</span> 前<span class="token number">2</span>行前<span class="token number">3</span>列
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span> 只取第<span class="token number">2</span>和第<span class="token number">5</span>行
+<span class="token number">10</span><span class="token operator">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">1</span> 从<span class="token number">10</span>到<span class="token number">1</span>，公差为<span class="token operator">-</span><span class="token number">1</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">:</span><span class="token keyword">end</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span> 取第<span class="token number">2</span>行到最后一行
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">:</span><span class="token keyword">end</span><span class="token number">-1</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span> 取第<span class="token number">2</span>行到倒数第<span class="token number">2</span>行
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span> 取全部元素，输出的是一个列向量</code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span> 将<span class="token number">0</span>赋值给<span class="token number">1</span>行<span class="token number">3</span>列
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span> <span class="token number">5</span> <span class="token number">4</span><span class="token punctuation">]</span> 整行的赋值</code></pre>
+<pre class=" language-matlab"><code class="language-matlab">size（）：求矩阵的大小，几行几列
+<span class="token punctuation">[</span>r<span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> 将A的行、列数分别赋值给r、c
+r <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> 只返回行数
+c <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> 只返回列数</code></pre>
+<pre class=" language-matlab"><code class="language-matlab">B <span class="token operator">=</span> <span class="token function">repmat</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span> 将A复制m<span class="token operator">*</span>n块
+<span class="token function">inv</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span> 求B的逆矩阵
+<span class="token function">prod</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> 按列相乘
+<span class="token function">prod</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> 按行相乘
+E <span class="token operator">=</span> <span class="token function">eig</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> A的全部特征值，组成向量E
+<span class="token punctuation">[</span>V<span class="token punctuation">,</span>D<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">eig</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> A的全部特征值，构成对角阵D，且A的特征值构成V的列向量</code></pre>
+<h1 id="比较和逻辑运算"><a href="#比较和逻辑运算" class="headerlink" title="比较和逻辑运算"></a>比较和逻辑运算</h1><pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">4</span> <span class="token number">3</span> <span class="token number">8</span> <span class="token number">6</span> <span class="token number">5</span> <span class="token number">7</span> <span class="token number">2</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> eq <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">==</span>y<span class="token punctuation">)</span>
+
+eq <span class="token operator">=</span>
+
+  <span class="token number">1</span>×<span class="token number">9</span> logical 数组
+
+   <span class="token number">1</span>   <span class="token number">0</span>   <span class="token number">1</span>   <span class="token number">0</span>   <span class="token number">0</span>   <span class="token number">0</span>   <span class="token number">1</span>   <span class="token number">0</span>   <span class="token number">1</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> xy <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>y<span class="token operator">&lt;</span><span class="token number">7</span><span class="token punctuation">)</span>
+
+xy <span class="token operator">=</span>
+
+  <span class="token number">1</span>×<span class="token number">9</span> logical 数组
+
+   <span class="token number">0</span>   <span class="token number">0</span>   <span class="token number">0</span>   <span class="token number">0</span>   <span class="token number">0</span>   <span class="token number">1</span>   <span class="token number">0</span>   <span class="token number">1</span>   <span class="token number">0</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> xoy <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token punctuation">(</span>y<span class="token operator">&lt;</span><span class="token number">7</span><span class="token punctuation">)</span>
+
+xoy <span class="token operator">=</span>
+
+  <span class="token number">1</span>×<span class="token number">9</span> logical 数组
+
+   <span class="token number">1</span>   <span class="token number">1</span>   <span class="token number">1</span>   <span class="token number">0</span>   <span class="token number">1</span>   <span class="token number">1</span>   <span class="token number">1</span>   <span class="token number">1</span>   <span class="token number">1</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 把x里小于0的都改为0，省的写for循环</span>
+<span class="token operator">></span><span class="token operator">></span> x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">2</span> <span class="token number">3</span> <span class="token operator">-</span><span class="token number">4</span> <span class="token number">5</span> <span class="token operator">-</span><span class="token number">6</span> <span class="token number">7</span> <span class="token operator">-</span><span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">x</span><span class="token punctuation">(</span>x<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+x <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">0</span>     <span class="token number">3</span>     <span class="token number">0</span>     <span class="token number">5</span>     <span class="token number">0</span>     <span class="token number">7</span>     <span class="token number">0</span>     <span class="token number">9</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 第2行赋值为0</span>
+y <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+    <span class="token operator">-</span><span class="token number">4</span>     <span class="token number">5</span>     <span class="token number">6</span>
+     <span class="token number">7</span>     <span class="token number">8</span>     <span class="token number">9</span>
+
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">y</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span>
+
+y <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+     <span class="token number">0</span>     <span class="token number">0</span>     <span class="token number">0</span>
+     <span class="token number">7</span>     <span class="token number">8</span>     <span class="token number">9</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 先找到第一列中小于0的，再把那一行都设为0</span>
+<span class="token operator">></span><span class="token operator">></span> y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token operator">-</span><span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span>
+
+y <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+    <span class="token operator">-</span><span class="token number">4</span>     <span class="token number">5</span>     <span class="token number">6</span>
+     <span class="token number">7</span>     <span class="token number">8</span>     <span class="token number">9</span>
+
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">y</span><span class="token punctuation">(</span><span class="token function">y</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span>
+
+y <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+     <span class="token number">0</span>     <span class="token number">0</span>     <span class="token number">0</span>
+     <span class="token number">7</span>     <span class="token number">8</span>     <span class="token number">9</span></code></pre>
+<h1 id="数组操作函数"><a href="#数组操作函数" class="headerlink" title="数组操作函数"></a>数组操作函数</h1><pre class=" language-matlab"><code class="language-matlab">flipud（）：行逆序排列
+fliplr（）：列逆序排列
+rot90（）：逆时针<span class="token number">90</span>°旋转</code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span>
+
+A <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+     <span class="token number">4</span>     <span class="token number">5</span>     <span class="token number">6</span>
+     <span class="token number">7</span>     <span class="token number">8</span>     <span class="token number">9</span>
+
+<span class="token operator">></span><span class="token operator">></span> B <span class="token operator">=</span> <span class="token function">flipud</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+B <span class="token operator">=</span>
+
+     <span class="token number">7</span>     <span class="token number">8</span>     <span class="token number">9</span>
+     <span class="token number">4</span>     <span class="token number">5</span>     <span class="token number">6</span>
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+
+<span class="token operator">></span><span class="token operator">></span> C <span class="token operator">=</span> <span class="token function">fliplr</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+C <span class="token operator">=</span>
+
+     <span class="token number">3</span>     <span class="token number">2</span>     <span class="token number">1</span>
+     <span class="token number">6</span>     <span class="token number">5</span>     <span class="token number">4</span>
+     <span class="token number">9</span>     <span class="token number">8</span>     <span class="token number">7</span>
+
+<span class="token operator">></span><span class="token operator">></span> D <span class="token operator">=</span> <span class="token function">rot90</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+D <span class="token operator">=</span>
+
+     <span class="token number">3</span>     <span class="token number">6</span>     <span class="token number">9</span>
+     <span class="token number">2</span>     <span class="token number">5</span>     <span class="token number">8</span>
+     <span class="token number">1</span>     <span class="token number">4</span>     <span class="token number">7</span></code></pre>
+<hr>
+<pre class=" language-matlab"><code class="language-matlab">sum（）：求和函数</code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">sum</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+ans <span class="token operator">=</span>
+
+     <span class="token number">6</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">sum</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% 相当于sum（B，1）,每列求和</span>
+
+ans <span class="token operator">=</span>
+
+    <span class="token number">12</span>    <span class="token number">15</span>    <span class="token number">18</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> <span class="token function">sum</span><span class="token punctuation">(</span>B<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% 每行求和</span>
+
+ans <span class="token operator">=</span>
+
+     <span class="token number">6</span>
+    <span class="token number">15</span>
+    <span class="token number">24</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token function">B</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% 所有总和</span>
+
+ans <span class="token operator">=</span>
+
+    <span class="token number">45</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> C <span class="token operator">=</span> <span class="token function">B</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% 将B矩阵拉成1维向量</span>
+
+C <span class="token operator">=</span>
+
+     <span class="token number">1</span>
+     <span class="token number">4</span>
+     <span class="token number">7</span>
+     <span class="token number">2</span>
+     <span class="token number">5</span>
+     <span class="token number">8</span>
+     <span class="token number">3</span>
+     <span class="token number">6</span>
+     <span class="token number">9</span></code></pre>
+<hr>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">max</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+ans <span class="token operator">=</span>
+
+     <span class="token number">3</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> <span class="token function">max</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% 跟2比较，取最大</span>
+
+ans <span class="token operator">=</span>
+
+     <span class="token number">2</span>     <span class="token number">2</span>     <span class="token number">3</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">3</span> <span class="token number">9</span><span class="token punctuation">;</span><span class="token number">4</span> <span class="token number">8</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">% 2维数组取最大，默认取每列最大</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">max</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>
+
+ans <span class="token operator">=</span>
+
+     <span class="token number">4</span>     <span class="token number">8</span>     <span class="token number">9</span></code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> <span class="token function">max</span><span class="token punctuation">(</span>B<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 按照行取最大值的格式</span>
+
+ans <span class="token operator">=</span>
+
+     <span class="token number">9</span>
+     <span class="token number">8</span></code></pre>
+<h1 id="常用数学函数"><a href="#常用数学函数" class="headerlink" title="常用数学函数"></a>常用数学函数</h1><pre class=" language-matlab"><code class="language-matlab">sin<span class="token punctuation">,</span>cos<span class="token punctuation">,</span>tan<span class="token punctuation">,</span>cot<span class="token punctuation">,</span>asin<span class="token punctuation">,</span>acos<span class="token punctuation">,</span>atan<span class="token punctuation">,</span>acot</code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">6</span><span class="token operator">:</span><span class="token keyword">pi</span>
+
+x <span class="token operator">=</span>
+
+         <span class="token number">0</span>    <span class="token number">0.5236</span>    <span class="token number">1.0472</span>    <span class="token number">1.5708</span>    <span class="token number">2.0944</span>    <span class="token number">2.6180</span>    <span class="token number">3.1416</span>
+
+<span class="token operator">></span><span class="token operator">></span> y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+y <span class="token operator">=</span>
+
+         <span class="token number">0</span>    <span class="token number">0.5000</span>    <span class="token number">0.8660</span>    <span class="token number">1.0000</span>    <span class="token number">0.8660</span>    <span class="token number">0.5000</span>    <span class="token number">0.0000</span></code></pre>
+<hr>
+<pre class=" language-matlab"><code class="language-matlab">abs（）：取绝对值
+sqrt（）：开根号</code></pre>
+<pre class=" language-matlab"><code class="language-matlab">ceil（）：向上取整
+floor（）：向下取整
+fix（）：向<span class="token number">0</span>靠取整
+round（）：四舍五入取整</code></pre>
+<pre class=" language-matlab"><code class="language-matlab">mod（）：取余</code></pre>
+<h1 id="简单作图"><a href="#简单作图" class="headerlink" title="简单作图"></a>简单作图</h1><pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> x <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> y1 <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> y2 <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y1<span class="token punctuation">,</span><span class="token string">'-b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">% 蓝色实线</span>
+<span class="token operator">></span><span class="token operator">></span> hold on<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">% 避免下面的图覆盖掉上面的</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y2<span class="token punctuation">,</span><span class="token string">'-r'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">text</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">'(0,0)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'sin x'</span><span class="token punctuation">,</span><span class="token string">'cos x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><img src="https://i.loli.net/2019/11/05/bGEpKN8FActwvTY.png" alt="简单作图1.png"></p>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> t <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">180</span><span class="token operator">:</span><span class="token number">4</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+x <span class="token operator">=</span> <span class="token number">16</span><span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token operator">.^</span><span class="token number">3</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token number">13</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">5</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">...</span>
+<span class="token operator">-</span><span class="token number">2</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token operator">-</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token number">-3</span><span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'-r'</span><span class="token punctuation">,</span>x<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'-b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">% X、Y轴范围分别是[-20,20]、[-20、15]</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Two Heart'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'U'</span><span class="token punctuation">,</span><span class="token string">'I'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><img src="https://i.loli.net/2019/11/05/vc2Rdq9EKlSaLZJ.png" alt="简单作图2.png"></p>
+<h1 id="3维作图"><a href="#3维作图" class="headerlink" title="3维作图"></a>3维作图</h1><pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> t <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">50</span><span class="token operator">:</span><span class="token number">10</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+x <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+z <span class="token operator">=</span> t<span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">plot3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">% 3维作图</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Helix'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'sin t'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'cos t'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">zlabel</span><span class="token punctuation">(</span><span class="token string">'t'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> grid on<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">% 加网格线</span></code></pre>
+<p><img src="https://i.loli.net/2019/11/05/kKHt139zIDupEvs.png" alt="3维作图.png"></p>
+<hr>
+<pre class=" language-matlab"><code class="language-matlab">meshgrid（）：生成格网采样点</code></pre>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">meshgrid</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+x <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+     <span class="token number">1</span>     <span class="token number">2</span>     <span class="token number">3</span>
+
+
+y <span class="token operator">=</span>
+
+     <span class="token number">1</span>     <span class="token number">1</span>     <span class="token number">1</span>
+     <span class="token number">2</span>     <span class="token number">2</span>     <span class="token number">2</span>
+     <span class="token number">3</span>     <span class="token number">3</span>     <span class="token number">3</span>
+
+<span class="token comment" spellcheck="true">% 下图为此函数生成的格网点</span></code></pre>
+<p><img src="https://i.loli.net/2019/11/05/bCHnFdloh5Kif3J.png" alt="meshgrid格网点.png"></p>
+<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">meshgrid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> z <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">.*</span><span class="token function">cos</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">mesh</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">% 绘制3维曲面</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">surf</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">% 3维着色</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">zlabel</span><span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">></span><span class="token operator">></span> <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'sin x sin y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><img src="https://i.loli.net/2019/11/05/M36sh7rfcCTFtDK.png" alt="结合meshgrid3维作图.png"></p>
+<h1 id="M函数格式"><a href="#M函数格式" class="headerlink" title="M函数格式"></a>M函数格式</h1><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 求矩形面积</span>
+<span class="token keyword">function</span> area <span class="token operator">=</span> <span class="token function">rectarea</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span>W<span class="token punctuation">)</span>
+area <span class="token operator">=</span> L<span class="token operator">.*</span>W</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/notes/" rel="tag"># notes</a>
+              <a href="/tags/matlab/" rel="tag"># matlab</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/05/mybatis/" rel="prev" title="MyBatis">
+      <i class="fa fa-chevron-left"></i> MyBatis
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/05/springmvc/" rel="next" title="SpringMVC">
+      SpringMVC <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较和逻辑运算"><span class="nav-number">2.</span> <span class="nav-text">比较和逻辑运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组操作函数"><span class="nav-number">3.</span> <span class="nav-text">数组操作函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用数学函数"><span class="nav-number">4.</span> <span class="nav-text">常用数学函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单作图"><span class="nav-number">5.</span> <span class="nav-text">简单作图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3维作图"><span class="nav-number">6.</span> <span class="nav-text">3维作图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#M函数格式"><span class="nav-number">7.</span> <span class="nav-text">M函数格式</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="GaoXin"
+      src="/images/2.jpg">
+  <p class="site-author-name" itemprop="name">GaoXin</p>
+  <div class="site-description" itemprop="description">时间不在于你拥有多少，而在于你怎样使用。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GaoXin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
