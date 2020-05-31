@@ -75,7 +75,7 @@
       <link href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/"/>
       <url>/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/</url>
       
-        <content type="html"><![CDATA[<p>主要技术：</p><ul><li>前端，Vue.js、ElementUI</li><li>后端，SpringBoot</li><li>数据库，MySQL</li><li>前端服务器：Nginx；后端服务器：Tomcat</li></ul><a id="more"></a><h1 id="前端项目结构"><a href="#前端项目结构" class="headerlink" title="前端项目结构"></a>前端项目结构</h1><p><img src="https://i.loli.net/2020/05/30/uhTCV96FN5Y3cmD.png" alt="2019040120135655.png"></p><p>需要重点关注的就是小红旗标注的部分，经常修改的部分就是组件文件夹。</p><p>前面提到过前后端分离的意思是前后端之间通过 RESTful API 传递 JSON 数据进行交流。</p><h1 id="前端页面开发"><a href="#前端页面开发" class="headerlink" title="前端页面开发"></a>前端页面开发</h1><ul><li><p>Login.vue，组件文件夹下新建，就是输入账号密码的登陆界面</p></li><li><p>AppIndex.vue，组件文件夹下，就是登陆成功后显示的界面</p></li><li><p>在src\main.js里设置反向代理</p></li><li><p>在src\router\index.js配置页面路由</p></li><li><p>config\index.js配置跨域支持，使后端能够访问到前端资源</p></li></ul><h1 id="后端开发"><a href="#后端开发" class="headerlink" title="后端开发"></a>后端开发</h1><ul><li>User类</li><li>Result类，为了构造response，主要是响应码</li><li>LoginController，是对响应进行处理的部分</li></ul><h1 id="引入数据库"><a href="#引入数据库" class="headerlink" title="引入数据库"></a>引入数据库</h1><ul><li><p>创建数据库与表</p></li><li><p>完善登陆控制器</p><ul><li>修改User类，以建立对数据库的映射</li><li>UserDAO，用来操作数据库的对象</li><li>UserService，对UserDAO的二次封装</li><li>LoginController，登录控制器是功能的核心部分，具体的实现，就是通过 <code>UserService</code> 提供的 <code>get</code> 方法查询数据库，如果返回的对象为空，则验证失败，否则就验证成功。</li></ul></li><li><p>DAO 用于与数据库的直接交互，定义增删改查等操作。</p></li><li><p>Service 负责业务逻辑，跟功能相关的代码一般写在这里，编写、调用各种方法对 DAO 取得的数据进行操作。</p></li><li><p>Controller 负责数据交互，即接收前端发送的数据，通过调用 Service 获得处理后的数据并返回。</p></li></ul><h1 id="使用Element辅助前端开发"><a href="#使用Element辅助前端开发" class="headerlink" title="使用Element辅助前端开发"></a>使用Element辅助前端开发</h1>]]></content>
+        <content type="html"><![CDATA[<p>主要技术：</p><ul><li>前端，Vue.js、ElementUI</li><li>后端，SpringBoot</li><li>数据库，MySQL</li><li>前端服务器：Nginx；后端服务器：Tomcat</li></ul><a id="more"></a><h1 id="前端项目结构"><a href="#前端项目结构" class="headerlink" title="前端项目结构"></a>前端项目结构</h1><p><img src="https://i.loli.net/2020/05/30/uhTCV96FN5Y3cmD.png" alt="2019040120135655.png"></p><p>需要重点关注的就是小红旗标注的部分，经常修改的部分就是组件文件夹。</p><p>前面提到过前后端分离的意思是前后端之间通过 RESTful API 传递 JSON 数据进行交流。</p><h1 id="前端页面开发"><a href="#前端页面开发" class="headerlink" title="前端页面开发"></a>前端页面开发</h1><ul><li><p>Login.vue，组件文件夹下新建，就是输入账号密码的登陆界面</p></li><li><p>AppIndex.vue，组件文件夹下，就是登陆成功后显示的界面</p></li><li><p>在src\main.js里设置反向代理</p></li><li><p>在src\router\index.js配置页面路由</p></li><li><p>config\index.js配置跨域支持，使后端能够访问到前端资源</p></li></ul><h1 id="后端开发"><a href="#后端开发" class="headerlink" title="后端开发"></a>后端开发</h1><ul><li>User类</li><li>Result类，为了构造response，主要是响应码</li><li>LoginController，是对响应进行处理的部分</li></ul><h1 id="引入数据库"><a href="#引入数据库" class="headerlink" title="引入数据库"></a>引入数据库</h1><ul><li><p>创建数据库与表</p></li><li><p>完善登陆控制器</p><ul><li>修改User类，以建立对数据库的映射</li><li>UserDAO，用来操作数据库的对象</li><li>UserService，对UserDAO的二次封装</li><li>LoginController，登录控制器是功能的核心部分，具体的实现，就是通过 <code>UserService</code> 提供的 <code>get</code> 方法查询数据库，如果返回的对象为空，则验证失败，否则就验证成功。</li></ul></li><li><p>DAO 用于与数据库的直接交互，定义增删改查等操作。</p></li><li><p>Service 负责业务逻辑，跟功能相关的代码一般写在这里，编写、调用各种方法对 DAO 取得的数据进行操作。</p></li><li><p>Controller 负责数据交互，即接收前端发送的数据，通过调用 Service 获得处理后的数据并返回。</p></li></ul><h1 id="使用Element辅助前端开发"><a href="#使用Element辅助前端开发" class="headerlink" title="使用Element辅助前端开发"></a>使用Element辅助前端开发</h1><h1 id="利用Nginx实现反向代理"><a href="#利用Nginx实现反向代理" class="headerlink" title="利用Nginx实现反向代理"></a>利用Nginx实现反向代理</h1>]]></content>
       
       
       <categories>
@@ -173,46 +173,6 @@
             <tag> Java </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>js学习</title>
-      <link href="/2020/05/08/js-xue-xi/"/>
-      <url>/2020/05/08/js-xue-xi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h1><a id="more"></a><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span><span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span><span class="token operator">&lt;</span>head<span class="token operator">></span>    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>    <span class="token operator">&lt;</span>title<span class="token operator">></span>HelloWorld<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span class="token operator">&lt;</span>body<span class="token operator">></span>    <span class="token operator">&lt;</span>script<span class="token operator">></span>        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> note </tag>
-            
-            <tag> js </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java面试</title>
-      <link href="/2020/04/07/java-mian-shi/"/>
-      <url>/2020/04/07/java-mian-shi/</url>
-      
-        <content type="html"><![CDATA[<p>java源程序先经过javac编译器编译成二进制的.class字节码文件（java的跨平台指的就是.class字节码文件的跨平台，.class字节码文件是与平台无关的），.class文件再运行在jvm上，java解释器（jvm的一部分）会将其解释成对应平台的机器码执行，所以java所谓的跨平台就是在不同平台上安装了不同的jvm，而在不同平台上生成的.class文件都是一样的，而.class文件再由对应平台的jvm解释成对应平台的机器码执行。</p><a id="more"></a><h1 id="需要学的"><a href="#需要学的" class="headerlink" title="需要学的"></a>需要学的</h1><ol><li>多线程编程</li><li>同步方法、同步代码块</li><li>几种内部类</li></ol>]]></content>
-      
-      
       
     </entry>
     
@@ -503,9 +463,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> Java </tag>
+            
+            <tag> notes </tag>
             
             <tag> SpringBoot </tag>
             
@@ -617,9 +577,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> Java </tag>
+            
+            <tag> notes </tag>
             
             <tag> SpringBoot </tag>
             
@@ -675,9 +635,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> Java </tag>
+            
+            <tag> notes </tag>
             
             <tag> SSM </tag>
             
@@ -733,9 +693,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> Java </tag>
+            
+            <tag> notes </tag>
             
             <tag> SpringMVC </tag>
             
@@ -789,9 +749,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> Java </tag>
+            
+            <tag> notes </tag>
             
             <tag> MyBaits </tag>
             
