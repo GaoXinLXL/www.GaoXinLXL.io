@@ -154,6 +154,110 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/12/04/springcloud/">
+                SpringCloud
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-04</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/笔记/">笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>Spring Cloud为开发人员提供了快速构建分布式系统中一些常见模式的工具（例如配置管理，服务发现，断路器，智能路由，微代理，控制总线）。分布式系统的协调导致了样板模式, 使用Spring Cloud开发人员可以快速地支持实现这些模式的服务和应用程序。他们将在任何分布式环境中运行良好，包括开发人员自己的笔记本电脑，裸机数据中心，以及Cloud Foundry等托管平台</p>
+        </div>
+        <a href="/2019/12/04/springcloud/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/02/java-quan-fang-wei-fu-xi/">
+                Java地毯式轰炸
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/笔记/">笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p><strong>面向对象</strong> ：<strong>面向对象易维护、易复用、易扩展。</strong> 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护。但是，<strong>面向对象性能比面向过程低</strong>。</p>
+        </div>
+        <a href="/2019/12/02/java-quan-fang-wei-fu-xi/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/02/ling-san-zhi-shi-dian/">
+                零散知识点
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/笔记/">笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="注解问题"><a href="#注解问题" class="headerlink" title="注解问题"></a>注解问题</h1><h2 id="PathVaribale"><a href="#PathVaribale" class="headerlink" title="PathVaribale"></a>PathVaribale</h2><blockquote>
+<p>获取url中的数据</p>
+</blockquote>
+<p>例：获取<code>Url=localhost:8080/hello/id</code>中的<code>id</code>值</p>
+<pre><code class="java">@RestController
+public class MyController {
+
+    @RequestMapping(&quot;/hello/{id}&quot;)
+    public String sayHello(@PathVariable(&quot;id&quot;) int id){
+        return &quot;id:&quot;+id;
+    }
+}</code></pre>
+        </div>
+        <a href="/2019/12/02/ling-san-zhi-shi-dian/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/21/shu-ju-ke-shi-hua/">
                 数据可视化
             </a>
@@ -396,103 +500,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/05/mybatis/">
-                MyBatis
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-05</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/笔记/">笔记</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <blockquote>
-<p>MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis可以使用简单的 XML 或注解来配置和映射原生类型、接口和 Java 的 POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。</p>
-</blockquote>
-        </div>
-        <a href="/2019/11/05/mybatis/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/04/blog-management-notes/">
-                Blog management notes
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-04</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/笔记/">笔记</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <blockquote>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-        </div>
-        <a href="/2019/11/04/blog-management-notes/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/03/first2blog/">
-                first2blog
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-03</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/java/">java</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="初来乍到"><a href="#初来乍到" class="headerlink" title="初来乍到"></a>初来乍到</h1><pre class=" language-java"><code class="language-java"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -505,7 +512,7 @@
                 <a class="" href="/page/2/">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </a>
-                <a class="disabled" href="/">
+                <a class="" href="/page/4/">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
             </div>
@@ -547,7 +554,7 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/">基于Vue和SpringBoot前后端分离的图书管</a>
+                <a class="footer-post" href="/2020/05/30/ioc-yuan-li/">IoC原理</a>
             </li>
             
         </ul>
@@ -565,15 +572,15 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/java/">java</a>
+            <a class="footer-post" href="/categories/%E6%9C%89%E6%84%9F%E8%80%8C%E5%8F%91/">有感而发</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/%E6%9C%89%E6%84%9F%E8%80%8C%E5%8F%91/">有感而发</a>
         </li>
         
     </ul>
