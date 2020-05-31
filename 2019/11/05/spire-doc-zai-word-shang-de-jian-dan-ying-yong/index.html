@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="鹰击长空，鱼翔浅底，万类霜天竞自由">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="GaoXin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Spire.Doc在Word上的简单应用"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="鹰击长空，鱼翔浅底，万类霜天竞自由" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="GaoXin"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>Spire.Doc在Word上的简单应用 - GaoXin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/05/spire-doc-zai-word-shang-de-jian-dan-ying-yong/">
+                Spire.Doc在Word上的简单应用
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-05</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/记忆/">记忆</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <blockquote>
+<p>记一件小事（2019年9月12日）。</p>
+<p>老同学（绕土豪）的请求帮助，我尽力解决，下文所示是给他的回复。现在时间过去快两月，已经没有修改的必要，作原样保留。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p><img src="https://i.loli.net/2019/11/05/Z3jpPzMu5Veokxh.jpg" alt="饶土豪的呼唤"></p>
+<h1 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h1><p><img src="https://i.loli.net/2019/11/05/oCv56T4gI2GOkic.png" alt="导出按钮"></p>
+<p><img src="https://i.loli.net/2019/11/05/R7wkA3OjHfsEMYr.png" alt="Word中结果"></p>
+<h1 id="程序使用前须知"><a href="#程序使用前须知" class="headerlink" title="程序使用前须知"></a>程序使用前须知</h1><ul>
+<li><p>提前建立两个word文件，其中一个作为模板，另一个作为结果展示文件</p>
+<ul>
+<li><p>模板里面可以绘制表格，表格中对结果部分使用<code>占位</code>符，如图所示：</p>
+<p><img src="https://i.loli.net/2019/11/05/n7XB4FgRkv3aGVN.png" alt="模板"></p>
+</li>
+<li><p>在程序运行后，另一个word就会展示如上面<code>结果展示</code>中的结果</p>
+</li>
+</ul>
+</li>
+<li><p>还有很多对word的操作，可自行网上搜索Spire</p>
+</li>
+</ul>
+<h1 id="准备操作"><a href="#准备操作" class="headerlink" title="准备操作"></a>准备操作</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
+<li>C#</li>
+<li>Spire.Doc for .NET</li>
+</ul>
+<h1 id="Spire简介"><a href="#Spire简介" class="headerlink" title="Spire简介"></a>Spire简介</h1><p><strong>Spire.Doc for .NET</strong>是一款由E-iceblue公司开发的专业的Word .NET<a href="https://baike.baidu.com/item/类库/3351433" target="_blank" rel="noopener">类库</a>，使用该工具开发人员可以在任意<a href="https://baike.baidu.com/item/.NET" target="_blank" rel="noopener">.NET</a>平台（<a href="https://baike.baidu.com/item/C%23" target="_blank" rel="noopener">C#</a>，<a href="https://baike.baidu.com/item/VB.NET" target="_blank" rel="noopener">VB.NET</a>，<a href="https://baike.baidu.com/item/ASP.NET" target="_blank" rel="noopener">ASP.NET</a>）上快速创建，读取，写入，转换，打印Word文档。</p>
+<p><code>简而言之，利用Spire来快速实现需求</code></p>
+<p>那Spire怎么获取呢？</p>
+<p>从官网下载速度有点慢，<code>我直接传给你</code></p>
+<p><img src="https://i.loli.net/2019/11/05/jM9YExJrPHqWdUD.png" alt="需要的相关文件"></p>
+<h2 id="Spire的具体使用"><a href="#Spire的具体使用" class="headerlink" title="Spire的具体使用"></a>Spire的具体使用</h2><p>在解决方案资源管理器里，<code>引用</code>添加就行</p>
+<p><img src="https://i.loli.net/2019/11/05/ZPEHGQneULmzlI1.png" alt="引用添加"></p>
+<p>然后在代码开头引入命名空间就完成准备工作了</p>
+<p><img src="https://i.loli.net/2019/11/05/aUqJ6kDNpETPrlj.png" alt="namespace"></p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><p>搞个<code>button</code>来写</p>
+<p><img src="https://i.loli.net/2019/11/05/Yc6wQLqmvVE1oJe.png" alt="button"></p>
+<p>随便搞个例子试试：</p>
+<pre class=" language-c#"><code class="language-c#">using Spire.Doc;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int i = 2;
+            double a, b, x,y;
+            a = 1.2;
+            b = 2.3;
+            x = (a + b)/2;
+            y = ((a-x)*(a-x)+(b-x)*(b-x))/2;//方差
+
+            var doc = new Document();
+            doc.LoadFromFile("F:\\test\\自己定义一个模板.docx");
+
+            doc.Replace("$[form0]$", "绕皮皮", false, false);
+            doc.Replace("$[form1]$", y.ToString(), false, false);
+            doc.Replace("$[form"+i+"]$", "666", false, false);
+            if(y<0.5)
+                doc.Replace("$[form3]$", "良好", false, false);
+            else
+                doc.Replace("$[form3]$", "差劲", false, false);
+
+            //搞个时间显示一下
+            string time = DateTime.Now.ToLocalTime().ToString();
+            doc.Replace("$[form4]$", time, false, false);
+
+            doc.SaveToFile("F:\\test\\根据模板导出的数据.docx");
+            doc.Close();
+            MessageBox.Show("导出成功");           
+        }
+    }
+}</code></pre>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>利用Spire可以大大简化对word的操作</li>
+<li>提前建立模板，利用好占位符</li>
+<li>更多操作请查找Spire资料</li>
+<li>一上午时间过去了</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/一件小事/">#一件小事</a> <a href="/tags/老同学/">#老同学</a> <a href="/tags/C/">#C#</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-topn/">Hadoop学习之TopN</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-shu-ju-qu-chong/">Hadoop学习之数据去重</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/">基于Vue和SpringBoot前后端分离的图书管</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BF%86/">记忆</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/java/">java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E6%9C%89%E6%84%9F%E8%80%8C%E5%8F%91/">有感而发</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

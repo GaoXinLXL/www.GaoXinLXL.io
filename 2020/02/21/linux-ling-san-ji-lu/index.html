@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="鹰击长空，鱼翔浅底，万类霜天竞自由">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="GaoXin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Linux零散记录"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="鹰击长空，鱼翔浅底，万类霜天竞自由" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="GaoXin"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>Linux零散记录 - GaoXin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/02/21/linux-ling-san-ji-lu/">
+                Linux零散记录
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-02-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/笔记/">笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>Linux是一套免费使用和自由传播的<a href="https://baike.baidu.com/item/类Unix" target="_blank" rel="noopener">类Unix</a><a href="https://baike.baidu.com/item/操作系统/192" target="_blank" rel="noopener">操作系统</a>，是一个基于<a href="https://baike.baidu.com/item/POSIX" target="_blank" rel="noopener">POSIX</a>和Unix的多用户、<a href="https://baike.baidu.com/item/多任务/1011764" target="_blank" rel="noopener">多任务</a>、支持<a href="https://baike.baidu.com/item/多线程/1190404" target="_blank" rel="noopener">多线程</a>和多<a href="https://baike.baidu.com/item/CPU" target="_blank" rel="noopener">CPU</a>的操作系统。Linux不仅系统性能稳定，而且是开源软件。其核心防火墙组件性能高效、配置简单，保证了系统的安全。Linux与其他操作系统相比 ，具有<a href="https://baike.baidu.com/item/开放源码/7176422" target="_blank" rel="noopener">开放源码</a>、没有版权、技术社区用户多等特点 ，开放源码使得用户可以自由裁剪，灵活性高，功能强大，成本低。</p>
+<a id="more"></a>
+
+<h1 id="Yum"><a href="#Yum" class="headerlink" title="Yum"></a>Yum</h1><p>(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+<h1 id="开机流程"><a href="#开机流程" class="headerlink" title="开机流程"></a>开机流程</h1><p>开机到操作系统之前的动作：</p>
+<ol>
+<li>BIOS：开机主动执行的韧体，会认识到第一个可开机的装置</li>
+<li>MIBR</li>
+<li>开机管理程序（boot loader）</li>
+<li>核心文件：开始操作系统的功能</li>
+</ol>
+<p>这个BIOS就是在开机的时候，计算机系统会主动执行的第一个程序。</p>
+<h1 id="目录树结构"><a href="#目录树结构" class="headerlink" title="目录树结构"></a>目录树结构</h1><p><img src="https://i.loli.net/2020/02/25/bdeWwNnulB1APp3.png" alt="QQ截图20200225174156.png"></p>
+<p>所以文件都是由根目录（/）衍生来的。</p>
+<p>登录系统后，在当前命令窗口输入命令：</p>
+<pre><code>ls /</code></pre><p>看到</p>
+<pre><code>[root@VM_0_15_centos ~]# ls /
+bin  boot  data  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</code></pre><p>以下是对目录的解释：</p>
+<ul>
+<li><p><strong>/bin</strong>：<br>bin是Binary的缩写, 这个目录存放着最经常使用的命令。</p>
+</li>
+<li><p><strong>/boot：</strong><br>这里存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+</li>
+<li><p><strong>/dev ：</strong><br>dev是Device(设备)的缩写, 该目录下存放的是Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的。</p>
+</li>
+<li><p><strong>/etc：</strong><br>这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
+</li>
+<li><p><strong>/home</strong>：<br>用户的主目录，在Linux中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。</p>
+</li>
+<li><p><strong>/lib</strong>：<br>这个目录里存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</p>
+</li>
+<li><p><strong>/lost+found</strong>：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+</li>
+<li><p><strong>/media</strong>：<br>linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</p>
+</li>
+<li><p><strong>/mnt</strong>：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</p>
+</li>
+<li><p><strong>/opt</strong>：<br> 这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
+</li>
+<li><p><strong>/proc</strong>：<br>这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
+</li>
+<li><p><strong>/root</strong>：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+</li>
+<li><p><strong>/sbin</strong>：<br>s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。</p>
+</li>
+<li><p><strong>/selinux</strong>：<br> 这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
+</li>
+<li><p><strong>/srv</strong>：<br> 该目录存放一些服务启动之后需要提取的数据。</p>
+</li>
+<li><p><strong>/sys</strong>：</p>
+<p> 这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。</p>
+<p>sysfs文件系统集成了下面3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。</p>
+</li>
+</ul>
+<p>  该文件系统是内核设备树的一个直观反映。</p>
+<p>  当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
+<ul>
+<li><p><strong>/tmp</strong>：<br>这个目录是用来存放一些临时文件的。</p>
+</li>
+<li><p><strong>/usr</strong>：<br> 这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</p>
+</li>
+<li><p><strong>/usr/bin：</strong><br>系统用户使用的应用程序。</p>
+</li>
+<li><p><strong>/usr/sbin：</strong><br>超级用户使用的比较高级的管理程序和系统守护程序。</p>
+</li>
+<li><p><strong>/usr/src：</strong><br>内核源代码默认的放置目录。</p>
+</li>
+<li><p><strong>/var</strong>：<br>这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+</li>
+<li><p><strong>/run</strong>：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p>
+</li>
+</ul>
+<p>在Linux文件系统中有两个特殊的目录，一个用户所在的工作目录，也叫当前目录，可以使用一个点 <strong>.</strong> 来表示；另一个是当前目录的上一级目录，也叫父目录，可以使用两个点 <strong>..</strong> 来表示。</p>
+<ul>
+<li>. ：代表当前的目录，也可以使用 ./ 来表示；</li>
+<li>.. ：代表上一层目录，也可以 ../ 来代表。</li>
+</ul>
+<p>如果一个目录或文件名以一个点 . 开始，表示这个目录或文件是一个隐藏目录或文件(如：.bashrc)。即以默认方式查找时，不显示该目录或文件。</p>
+<h1 id="linux文件基本属性"><a href="#linux文件基本属性" class="headerlink" title="linux文件基本属性"></a>linux文件基本属性</h1><p>实例中，bin文件的第一个属性用”d”表示。”d”在Linux中代表该文件是一个目录文件。</p>
+<p>在Linux中第一个字符代表这个文件是目录、文件或链接文件等等。</p>
+<ul>
+<li>当为[ <strong>d</strong> ]则是目录</li>
+<li>当为[ <strong>-</strong> ]则是文件；</li>
+<li>若是[ <strong>l</strong> ]则表示为链接文档(link file)；</li>
+<li>若是[ <strong>b</strong> ]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；</li>
+<li>若是[ <strong>c</strong> ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</li>
+</ul>
+<p>接下来的字符中，以三个为一组，且均为『rwx』 的三个参数的组合。其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。 </p>
+<p><img src="https://i.loli.net/2020/02/26/qi5xMBEJVdR2HoO.png" alt="QQ截图20200226201025.png"></p>
+<h1 id="linux文件与目录管理"><a href="#linux文件与目录管理" class="headerlink" title="linux文件与目录管理"></a>linux文件与目录管理</h1><ul>
+<li><strong>绝对路径：</strong><br>路径的写法，由根目录 / 写起，例如： /usr/share/doc 这个目录。</li>
+<li><strong>相对路径：</strong><br>路径的写法，不是由 / 写起，例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成： cd ../man </li>
+</ul>
+<p>处理目录的常用命令：</p>
+<ul>
+<li>ls: 列出目录</li>
+<li>cd：切换目录</li>
+<li>pwd：显示目前的目录</li>
+<li>mkdir：创建一个新的目录</li>
+<li>rmdir：删除一个空的目录</li>
+<li>cp: 复制文件或目录</li>
+<li>rm: 移除文件或目录</li>
+<li>mv: 移动文件与目录，或修改文件与目录的名称</li>
+</ul>
+<p><strong>ls（列出目录）</strong></p>
+<p>选项与参数：</p>
+<ul>
+<li>-a ：全部的文件，连同隐藏文件( 开头为 . 的文件) 一起列出来(常用)</li>
+<li>-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)</li>
+<li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
+</ul>
+<p><strong>mkdir (创建新目录)</strong></p>
+<p>如果想要创建新的目录的话，那么就使用mkdir (make directory)吧。</p>
+<p>语法：</p>
+<pre><code>mkdir [-mp] 目录名称</code></pre><p>选项与参数：</p>
+<ul>
+<li>-m ：配置文件的权限喔！直接配置，不需要看默认权限 (umask) 的脸色～</li>
+<li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</li>
+</ul>
+<p><strong>rmdir (删除空的目录)</strong></p>
+<p>语法：</p>
+<pre><code> rmdir [-p] 目录名称</code></pre><p>选项与参数：</p>
+<ul>
+<li><strong>-p ：</strong>连同上一级『空的』目录也一起删除</li>
+</ul>
+<p>删除 runoob 目录</p>
+<pre><code>[root@www tmp]# rmdir runoob/</code></pre><p>将 mkdir 实例中创建的目录(/tmp 底下)删除掉！</p>
+<pre><code>[root@www tmp]# ls -l   &lt;==看看有多少目录存在？
+drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
+drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+[root@www tmp]# rmdir test   &lt;==可直接删除掉，没问题
+[root@www tmp]# rmdir test1  &lt;==因为尚有内容，所以无法删除！
+rmdir: `test1&#39;: Directory not empty
+[root@www tmp]# rmdir -p test1/test2/test3/test4
+[root@www tmp]# ls -l        &lt;==您看看，底下的输出中test与test1不见了！
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2</code></pre><p>利用 -p 这个选项，立刻就可以将 test1/test2/test3/test4 一次删除。</p>
+<p>不过要注意的是，这个 rmdir 仅能删除空的目录，你可以使用 rm 命令来删除非空目录。</p>
+<h1 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h1><p>Conda 是一个开源的软件包管理系统和环境管理系统，用于安装多个版本的软件包及其依赖关系，并在它们之间轻松切换。</p>
+<h1 id="一些命令"><a href="#一些命令" class="headerlink" title="一些命令"></a>一些命令</h1><h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h2><p>Linux touch命令用于修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会建立一个新的文件。</p>
+<h2 id="文件存放在哪的问题"><a href="#文件存放在哪的问题" class="headerlink" title="文件存放在哪的问题"></a>文件存放在哪的问题</h2><ol>
+<li>查看文件的安装路径：whereis + 文件名</li>
+<li>查看文件的运行路径：which + 文件名</li>
+</ol>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Linux/">#Linux</a> <a href="/tags/note/">#note</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-topn/">Hadoop学习之TopN</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-shu-ju-qu-chong/">Hadoop学习之数据去重</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/">基于Vue和SpringBoot前后端分离的图书管</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BF%86/">记忆</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/java/">java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E6%9C%89%E6%84%9F%E8%80%8C%E5%8F%91/">有感而发</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

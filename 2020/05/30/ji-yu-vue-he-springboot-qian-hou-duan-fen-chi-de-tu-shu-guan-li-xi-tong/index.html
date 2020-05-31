@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="鹰击长空，鱼翔浅底，万类霜天竞自由">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="GaoXin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="基于Vue和SpringBoot前后端分离的图书管理系统"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="鹰击长空，鱼翔浅底，万类霜天竞自由" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="GaoXin"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>基于Vue和SpringBoot前后端分离的图书管理系统 - GaoXin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/">
+                基于Vue和SpringBoot前后端分离的图书管理系统
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-30</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/项目/">项目</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>主要技术：</p>
+<ul>
+<li>前端，Vue.js、ElementUI</li>
+<li>后端，SpringBoot</li>
+<li>数据库，MySQL</li>
+<li>前端服务器：Nginx；后端服务器：Tomcat</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="前端项目结构"><a href="#前端项目结构" class="headerlink" title="前端项目结构"></a>前端项目结构</h1><p><img src="https://i.loli.net/2020/05/30/uhTCV96FN5Y3cmD.png" alt="2019040120135655.png"></p>
+<p>需要重点关注的就是小红旗标注的部分，经常修改的部分就是组件文件夹。</p>
+<p>前面提到过前后端分离的意思是前后端之间通过 RESTful API 传递 JSON 数据进行交流。</p>
+<h1 id="前端页面开发"><a href="#前端页面开发" class="headerlink" title="前端页面开发"></a>前端页面开发</h1><ul>
+<li><p>Login.vue，组件文件夹下新建，就是输入账号密码的登陆界面</p>
+</li>
+<li><p>AppIndex.vue，组件文件夹下，就是登陆成功后显示的界面</p>
+</li>
+<li><p>在src\main.js里设置反向代理</p>
+</li>
+<li><p>在src\router\index.js配置页面路由</p>
+</li>
+<li><p>config\index.js配置跨域支持，使后端能够访问到前端资源</p>
+</li>
+</ul>
+<h1 id="后端开发"><a href="#后端开发" class="headerlink" title="后端开发"></a>后端开发</h1><ul>
+<li>User类</li>
+<li>Result类，为了构造response，主要是响应码</li>
+<li>LoginController，是对响应进行处理的部分</li>
+</ul>
+<h1 id="引入数据库"><a href="#引入数据库" class="headerlink" title="引入数据库"></a>引入数据库</h1><ul>
+<li><p>创建数据库与表</p>
+</li>
+<li><p>完善登陆控制器</p>
+<ul>
+<li>修改User类，以建立对数据库的映射</li>
+<li>UserDAO，用来操作数据库的对象</li>
+<li>UserService，对UserDAO的二次封装</li>
+<li>LoginController，登录控制器是功能的核心部分，具体的实现，就是通过 <code>UserService</code> 提供的 <code>get</code> 方法查询数据库，如果返回的对象为空，则验证失败，否则就验证成功。</li>
+</ul>
+</li>
+<li><p>DAO 用于与数据库的直接交互，定义增删改查等操作。</p>
+</li>
+<li><p>Service 负责业务逻辑，跟功能相关的代码一般写在这里，编写、调用各种方法对 DAO 取得的数据进行操作。</p>
+</li>
+<li><p>Controller 负责数据交互，即接收前端发送的数据，通过调用 Service 获得处理后的数据并返回。</p>
+</li>
+</ul>
+<h1 id="使用Element辅助前端开发"><a href="#使用Element辅助前端开发" class="headerlink" title="使用Element辅助前端开发"></a>使用Element辅助前端开发</h1>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/SpringBoot/">#SpringBoot</a> <a href="/tags/Vue/">#Vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-topn/">Hadoop学习之TopN</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-shu-ju-qu-chong/">Hadoop学习之数据去重</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/">基于Vue和SpringBoot前后端分离的图书管</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BF%86/">记忆</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/java/">java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E6%9C%89%E6%84%9F%E8%80%8C%E5%8F%91/">有感而发</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

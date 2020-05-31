@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="鹰击长空，鱼翔浅底，万类霜天竞自由">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="GaoXin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="神经网络与深度学习"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="鹰击长空，鱼翔浅底，万类霜天竞自由" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="GaoXin"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>神经网络与深度学习 - GaoXin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/02/25/shen-jing-wang-luo-yu-shen-du-xue-xi/">
+                神经网络与深度学习
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-02-25</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/笔记/">笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>在传统的编程⽅法中，我们告诉计算机 做什么，把⼤问题分成许多⼩的、精确定义的任务，计算机可以很容易地执⾏。相⽐之下，在神 经⽹络中，我们不告诉计算机如何解决我们的问题。相反，它从观测数据中学习，找出它⾃⼰ 的解决问题的⽅法。</p>
+<a id="more"></a>
+
+<blockquote>
+<p>整理学习这本书《Neural Networks and Deep Learning》(美，Michael Nielsen)的笔记。</p>
+</blockquote>
+<h1 id="使⽤神经⽹络识别⼿写数字"><a href="#使⽤神经⽹络识别⼿写数字" class="headerlink" title="使⽤神经⽹络识别⼿写数字"></a>使⽤神经⽹络识别⼿写数字</h1><p>以使⽤神经⽹络识别⼿写数字为例 ，获取⼤量的⼿写数字，常称作<strong>训练样本</strong>，然后开发出⼀个可以从这些训练样本中进⾏学习的系统。换⾔之，神经⽹络使⽤样本来⾃动 推断出识别⼿写数字的规则。</p>
+<h2 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h2><p>⼀个感知器接受⼏个⼆进制输⼊，x 1 ,x 2 ,…，并产⽣⼀个⼆进制输出。</p>
+<p><img src="https://i.loli.net/2020/02/25/JsPQZykpfmTqjnE.png" alt="感知器"></p>
+<p>引⼊<strong>权重</strong>，w 1 ,w 2 ,…，表⽰相应输⼊对于输出重要性的实数。</p>
+<p>神经元的输出，0 或者 1，则由分配权重后的总和<br>$$<br>\sum_{j}w_jx_j<br>$$<br>⼩于或者⼤于⼀些<strong>阈值</strong>决定。</p>
+<p>和权重⼀样，阈值是⼀个实数，⼀个神经元的参数。⽤更精确的代数形式：</p>
+<p><img src="https://i.loli.net/2020/02/25/u1satSyUmKonLkQ.png" alt></p>
+<p>这就是⼀个感知器所要做的所有事情！</p>
+<p><strong>可以将感知器看作依据权重来作出决定的设备。</strong></p>
+<p>下面简化感知器的数学描述。</p>
+<ol>
+<li>$\sum_{j}w_jx_j$ 简化为$w\cdot x$ 。这⾥ w 和 x 对应权重和输<br>⼊的向量。</li>
+<li>把阈值移到不等式的另⼀边，并⽤感知器的偏置 b ≡ −threshold 代替。⽤偏置⽽不是阈值，那么感知器的规则可以重写为：</li>
+</ol>
+<p><img src="https://i.loli.net/2020/02/25/n2ol1iWPyUraBpz.png" alt></p>
+<p>我们可以把偏置看作⼀种表⽰让感知器输出 1（或者⽤⽣物学的术语，即激活感知器）有多容易的估算。</p>
+<p>在后面，用偏置代替阈值。</p>
+<p>假设⽹络错误地把⼀个“9”的图像分类为“8”。我们能够计算出怎么对权重和偏置做些⼩的改动，这样⽹络能够接近于把图像分类为“9”。然后我们要重复这个⼯作，反复改动权重和偏置来产⽣更好的输出。<strong>这时⽹络就在学习。</strong></p>
+<h2 id="S型神经元"><a href="#S型神经元" class="headerlink" title="S型神经元"></a>S型神经元</h2><p>正如⼀个感知器，S 型神经元有多个输⼊，x 1 ,x 2 ,…。但是这些输⼊可以取 0 和 1 中的任意值，⽽不仅仅是 0 或 1。例如，0.638… 是⼀个 S 型神经元的有效输⼊。同样，S 型神经元对每个输⼊有权重，w 1 ,w 2 ,…，和⼀个总的偏置，b。但是输出不是 0 或 1。相反，它现在是$ σ(w·x+b)$，这⾥ σ 被称为 S 型函数  ，定义为：</p>
+<p><img src="https://i.loli.net/2020/02/26/pL8QUSxhcMK19oi.png" alt="QQ浏览器截图20200226113914.png"></p>
+<p>把它们放在⼀起来更清楚地说明，⼀个具有输⼊ x 1 ,x 2 ,…，权重 w 1 ,w 2 ,…，和偏置 b 的 S型神经元的输出是：</p>
+<p><img src="https://i.loli.net/2020/02/26/WrcNsexuOTpw8IM.png" alt="QQ浏览器截图20200226114054.png"></p>
+<p>不难看出：</p>
+<ul>
+<li>若z趋近正无穷，则 σ(z)趋近1</li>
+<li>若z趋近负无穷，则 σ(z)趋近0</li>
+</ul>
+<p>σ 函数图像如下：</p>
+<p><img src="https://i.loli.net/2020/02/26/BmKeCbShEpXsdxl.png" alt="QQ浏览器截图20200226114555.png"></p>
+<blockquote>
+<p>顺便提⼀下，σ 有时被称为逻辑函数，⽽这种新的神经元类型被称为逻辑神经元。既然这些术语被很多从事于神经元⽹络的⼈使⽤，记住它是有⽤的。然⽽，我们将继续使⽤ S 型这个术语。</p>
+</blockquote>
+<p>σ 函数的平滑特性很关键。σ 的平滑意味着权重和偏置的微⼩<br>变化，即 ∆wj 和 ∆b，会从神经元产⽣⼀个微⼩的输出变化 ∆output。</p>
+<p>很明显，感知器和 S 型神经元之间⼀个很⼤的不同是 S 型神经元不仅仅输出 0 或 1。它可以输出 0 和 1 之间的任何实数，所以诸如 0.173… 和0.689… 的值是合理的输出。</p>
+<h2 id="神经网络的架构"><a href="#神经网络的架构" class="headerlink" title="神经网络的架构"></a>神经网络的架构</h2><p><img src="https://i.loli.net/2020/02/26/9o6LGsrjRV82Ddm.png" alt="QQ浏览器截图20200226115420.png"></p>
+<p>由于历史的原因，尽管是由 S 型神经元⽽不是感知器构成，这种多层⽹络有时被称为<strong>多层感知器</strong>或者 <strong>MLP</strong>。</p>
+<p>设计⽹络的输⼊输出层通常是⽐较直接的。例如，假设我们尝试确定⼀张⼿写数字的图像上是否写的是“9”。很⾃然地，我们可以将图⽚像素的强度进⾏编码作为输⼊神经元来设计⽹络。如果图像是⼀个 64 × 64 的灰度图像，那么我们会需要 4096 = 64 × 64 个输⼊神经元，每个强度取 0 和 1 之间合适的值。输出层只需要包含⼀个神经元，当输出值⼩于 0.5 时表⽰“输⼊图像不是⼀个 9”，⼤于 0.5 的值表⽰“输⼊图像是⼀个 9”。</p>
+<blockquote>
+<p>相⽐于神经⽹络中输⼊输出层的直观设计，隐藏层的设计则堪称⼀⻔艺术。</p>
+</blockquote>
+<p>⽬前为⽌，我们讨论的神经⽹络，都是以上⼀层的输出作为下⼀层的输⼊。这种⽹络被称为<strong>前馈神经⽹络</strong>。</p>
+<p>然⽽，也有⼀些⼈⼯神经⽹络的模型，其中反馈环路是可⾏的。这些模型被称为<strong>递归神经⽹络</strong>。</p>
+<h2 id="使用梯度下降进行学习"><a href="#使用梯度下降进行学习" class="headerlink" title="使用梯度下降进行学习"></a>使用梯度下降进行学习</h2><p>用来学习的数据集，成为<strong>训练数据集</strong>。这里使用<strong>MINIST数据集</strong>。</p>
+<p>我们希望有⼀个算法，能让我们找到权重和偏置，以⾄于⽹络的输出 y(x) 能够拟合所有的训练输⼊ x。为了量化我们如何实现这个⽬标，我们定义⼀个<strong>代价函数</strong>（有时被称为<strong>损失</strong>或<strong>⽬标函数</strong>）：</p>
+<p><img src="https://i.loli.net/2020/02/26/edlgxrUW17CZz2p.png" alt="QQ浏览器截图20200226131324.png"></p>
+<p>这⾥ w 表⽰所有的⽹络中权重的集合，b 是所有的偏置，n 是训练输⼊数据的个数，a 是表⽰当输⼊为 x 时输出的向量，求和则是在总的训练输⼊ x 上进⾏的。符号 ∥v∥ 是指向量 v 的模。</p>
+<p>我们把 C 称为<strong>⼆次</strong>代价函数；有时也称被称为<strong>均⽅误差</strong>或者 <strong>MSE</strong>。</p>
+<p>因此如果我们的学习算法能找到合适的权重和偏置，使得 C(w,b) ≈ 0，它就能很好地⼯作。因此我们的训练算法的⽬的，是最⼩化权重和偏置的代价函数 C(w,b)。换句话说，我们想要找到⼀系列能让代价尽可能⼩的权重和偏置。我们将采⽤称为<strong>梯度下降</strong>的算法来达到这个⽬的。</p>
+<p><strong>重复⼀下，我们训练神经⽹络的⽬的是找到能最⼩化⼆次代价函数 C(w,b) 的权重和偏置。</strong></p>
+<p>假设我们要最⼩化某些函数，C(v)。它可以是任意的多元实值函数，v = v 1 ,v 2 ,…。为了最⼩化 C(v)，想象 C 是⼀个只有两个变量 v1 和 v2 的函数：</p>
+<p><img src="https://i.loli.net/2020/02/26/AyF8JrC4Vf15eak.png" alt="QQ浏览器截图20200226132038.png"></p>
+<p>我们想要的是找到 C 的全局最⼩值。</p>
+<p>对于简单函数，用微积分求极小值是可行的。但是，神经⽹络中我们经常需要⼤量的变量——最⼤的神经⽹络有依赖数亿权重和偏置的代价函数，极其复杂。⽤微积分来计算最⼩值已经不可⾏了。</p>
+<p>思路：为⼀个（假想的）球体随机选择⼀个起始位置，然后<br>模拟球体滚落到⾕底的运动。我们可以通过计算 C 的导数（或者⼆阶导数）来简单模拟——这些导数会告诉我们⼭⾕中局部“形状”的⼀切，由此知道我们的球将怎样滚动。</p>
+<p>当我们在 v1 和 v2 ⽅向分别将球体移动⼀个很⼩的量，即 ∆v1 和 ∆v2 时，球体将会发⽣什么情况。微积分告诉我们 C 将会有如下变化：</p>
+<p><img src="https://i.loli.net/2020/02/26/jonr2fTeDG7zwqd.png" alt="QQ浏览器截图20200226132707.png"></p>
+<p>我们要寻找⼀种选择 ∆v 1 和 ∆v 2 的⽅法使得 ∆C 为负；即，我们选择它们是为了让球体滚落。为了弄明⽩如何选择，需要定义 ∆v 为 v 变化的向量，∆v ≡ (∆v 1 ,∆v 2 ) T ，T 是转置符号。我们也定义 C 的梯度为偏导数的向量，$(<br>∂C/<br>∂v 1 ,<br>∂C/<br>∂v 2<br>) T$。我们⽤ ∇C 来表⽰梯度向量，即：</p>
+<p><img src="https://i.loli.net/2020/02/26/yjbBeIZswRr6QLW.png" alt="QQ浏览器截图20200226133140.png"></p>
+<p>我们⻢上会⽤ ∆v 和梯度 ∇C 来重写 ∆C 的变化。</p>
+<p>有了这些定义，∆C 的表达式 可以被重写为：</p>
+<p><img src="https://i.loli.net/2020/02/26/gHEIVqYvoiMZReu.png" alt="QQ浏览器截图20200226133345.png"></p>
+<p>这个表达式解释了为什么 ∇C 被称为梯度向量：∇C 把 v 的变化关联为 C 的变化，正如我们期望的⽤梯度来表⽰。但是这个⽅程真正让我们兴奋的是它让我们看到了如何选取 ∆v 才能让∆C 为负数。假设我们选取：</p>
+<p><img src="https://i.loli.net/2020/02/26/ME2nxIOUzTkwvX7.png" alt="QQ浏览器截图20200226133503.png"></p>
+<p>这⾥的η 是个很⼩的正数（称为<strong>学习速率</strong>）。</p>
+<p>则$∆C ≈ −η∇C·∇C = −η∥∇C∥ 2 $。由于$ ∥∇C∥ 2 ≥ 0$，这保证了 ∆C ≤ 0，即，如果我们按照此规则去改变 v，那么 C 会<br>⼀直减⼩，不会增加。以此计算∆v，来移动球体的位置 v：</p>
+<p><img src="https://i.loli.net/2020/02/26/N5agvUlIC9G3DrH.png" alt="QQ浏览器截图20200226133854.png"></p>
+<p>然后我们⽤它再次更新规则来计算下⼀次移动。如果我们反复持续这样做，我们将持续减⼩C 直到 —— 正如我们希望的 —— 获得⼀个全局的最⼩值。</p>
+<p>总结⼀下，梯度下降算法⼯作的⽅式就是重复计算梯度 ∇C，然后沿着相反的⽅向移动，沿着⼭⾕“滚落”。我们可以想象它像这样：</p>
+<p><img src="https://i.loli.net/2020/02/26/vPmSZpcJd3B2flQ.png" alt="QQ浏览器截图20200226134004.png"></p>
+<p>学习速率 η 过大，则会以∆C &gt; 0 结束，这显然不好。同时，我们也不想 η 太⼩，因为这会使 ∆v 的变化极⼩，梯度下降算法就会运⾏得⾮常缓慢。在真正的实现中，η 通常是变化的。</p>
+<p>上述已经解释了具有两个变量的函数 C 的梯度下降。但事实上，即使 C 是⼀个具有更多变量的函数也能很好地⼯作。</p>
+<h1 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h1><p>在上⼀章，我们看到了神经⽹络如何使⽤梯度下降算法来学习他们⾃⾝的权重和偏置。但是，这⾥还留下了⼀个问题：我们并没有讨论如何计算代价函数的梯度。这是很⼤的缺失！在本章，<br>我们会解释计算这些梯度的快速算法，也就是反向传播（backpropagation）。</p>
+<p>反向传播的核⼼是⼀个对代价函数 C 关于任何权重 w（或者偏置 b ）的偏导数 ∂C/∂w 的表达式。这个表达式告诉我们在改变权重和偏置时，代价函数变化的快慢。</p>
+<h2 id="神经⽹络中使⽤矩阵快速计算输出的⽅法"><a href="#神经⽹络中使⽤矩阵快速计算输出的⽅法" class="headerlink" title="神经⽹络中使⽤矩阵快速计算输出的⽅法"></a>神经⽹络中使⽤矩阵快速计算输出的⽅法</h2><p>我们⾸先给出⽹络中权重的清晰定义。</p>
+<p><img src="https://i.loli.net/2020/03/05/SAouJIDdk6iqHw2.png" alt="QQ浏览器截图20200305124545.png"></p>
+<p>我们对⽹络的偏置和激活值也会使⽤类似的表⽰。</p>
+<p><img src="https://i.loli.net/2020/03/05/uy1c6nZLTgFiMfV.png" alt="QQ浏览器截图20200305124828.png"></p>
+<p><img src="https://i.loli.net/2020/03/05/Ayd5MEfrRZz62SO.png" alt="QQ浏览器截图20200305125142.png"></p>
+<p><img src="https://i.loli.net/2020/03/05/e2nKFzADuoCtBb4.png" alt="QQ浏览器截图20200305125351.png"></p>
+<h2 id="Hadamard-乘积，s-⊙-t"><a href="#Hadamard-乘积，s-⊙-t" class="headerlink" title="Hadamard 乘积，s ⊙ t"></a>Hadamard 乘积，s ⊙ t</h2><p><img src="https://i.loli.net/2020/03/05/ko3V6SbpU5GxvCF.png" alt="QQ浏览器截图20200305131014.png"></p>
+<p>这种类型的按元素乘法有时候被称为 Hadamard 乘积，或者Schur 乘积。</p>
+<h2 id="反向传播算法-1"><a href="#反向传播算法-1" class="headerlink" title="反向传播算法"></a>反向传播算法</h2><p>反向传播⽅程给出了⼀种计算代价函数梯度的⽅法。让我们显式地⽤算法描述出来：</p>
+<p><img src="https://i.loli.net/2020/03/05/WAJFaLc85DMlwbZ.png" alt="QQ浏览器截图20200305131905.png"></p>
+<h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><h2 id="介绍卷积网络"><a href="#介绍卷积网络" class="headerlink" title="介绍卷积网络"></a>介绍卷积网络</h2><p>  全连接，⽹络中的神经元与相邻的层上的每个神经元均连接。</p>
+<p><img src="https://i.loli.net/2020/03/05/Qdi2PFVDZo5Bkfs.png" alt="QQ浏览器截图20200305102424.png"></p>
+<p>卷积神经⽹络采⽤了三种基本概念：<strong>局部感受野</strong>（local receptive fields），<strong>共享权重</strong>（shared weights），和<strong>混合</strong>（pooling）。</p>
+<p><strong>局部感受野</strong>：在之前看到的全连接层的⽹络中，输⼊被描绘成纵向排列的神经元。但在⼀个卷积⽹络中，把输⼊看作是⼀个 28 × 28 的⽅形排列的神经元更有帮助，其值对应于我们⽤作输⼊的 28 × 28 的像素光强度：</p>
+<p><img src="https://i.loli.net/2020/03/05/jsPrQocIbiEevzV.png" alt="QQ浏览器截图20200305102635.png"></p>
+<p>第⼀个隐藏层中的每个神经元会连接到⼀个输⼊神经元的⼀个⼩区域，例如，⼀个 5 × 5 的区域，对应于 25 个输⼊像素。所以对于⼀个特定的隐藏神经元，我们可能有看起来像这样的连接：</p>
+<p><img src="https://i.loli.net/2020/03/05/GcFSTDelK2vfE3y.png" alt="QQ浏览器截图20200305103022.png"></p>
+<p>这个输⼊图像的区域被称为隐藏神经元的<strong>局部感受野</strong>。它是输⼊像素上的⼀个⼩窗⼝。每个连接学习⼀个权重。⽽隐藏神经元同时也学习⼀个总的偏置。你可以把这个特定的隐藏神经元看作是在学习分析它的局部感受野。</p>
+<p>我们然后在整个输⼊图像上交叉移动局部感受野。对于每个局部感受野，在第⼀个隐藏层中有⼀个不同的隐藏神经元。为了正确说明，让我们从左上⻆开始⼀个局部感受野：</p>
+<p><img src="https://i.loli.net/2020/03/05/RQDzcjB6xteyTMU.png" alt="QQ浏览器截图20200305103220.png"></p>
+<p>然后我们往右⼀个像素（即⼀个神经元）移动局部感受野，连接到第⼆个隐藏神经元：</p>
+<p><img src="https://i.loli.net/2020/03/05/9lfowbh6ZOMuKqp.png" alt="QQ浏览器截图20200305103304.png"></p>
+<p>如此重复，构建起第⼀个隐藏层。</p>
+<p>我显⽰的局部感受野每次移动⼀个像素。实际上，有时候会使⽤不同的跨距。例如，我可以往右（或下）移动 2 个像素的局部感受野，这种情况下我们使⽤了 2 个跨距。</p>
+<p><strong>共享权重和偏置</strong>：</p>
+<p>我已经说过每个隐藏神经元具有⼀个偏置和连接到它的局部感受野的5 × 5 权重。我没有提及的是我们打算对 24 × 24 隐藏神经元中的每⼀个使⽤相同的权重和偏置。换句话说，对第 j,k 个隐藏神经元，输出为：</p>
+<p><img src="https://i.loli.net/2020/03/05/bMz5TQgpOH4jsCv.png" alt="QQ浏览器截图20200305103819.png"></p>
+<p>这⾥ σ 是神经元的激活函数 —— 可以是我们在前⾯章⾥使⽤过的 S 型函数。b 是偏置的共享值。w l,m 是⼀个共享权重的 5 × 5 数组。最后，我们使⽤ a x,y 来表⽰位置为 x,y 的输⼊激活值。</p>
+<p><strong>这意味着第⼀个隐藏层的所有神经元检测完全相同的特征  ，只是在输⼊图像的不同位置。</strong>要明⽩为什么是这个道理，把权重和偏置设想成隐藏神经元可以挑选的东西，例如，在⼀个特定的局部感受野的垂直边缘。这种能⼒在图像的其它位置也很可能是有⽤的。因此，在图像中应⽤相同的特征检测器是⾮常有⽤的。⽤稍微更抽象的术语，卷积⽹络能很好地适应图像的平移不变性：例如稍稍移动⼀幅猫的图像，它仍然是⼀幅猫的图像。</p>
+<p>因为这个原因，我们有时候把从输⼊层到隐藏层的映射称为⼀个<strong>特征映射</strong>。我们把定义特征映射的权重称为<strong>共享权重</strong>。我们把以这种⽅式定义特征映射的偏置称为<strong>共享偏置</strong>。共享权重和偏置经常被称为⼀个<strong>卷积核</strong>或者<strong>滤波器</strong>。</p>
+<p>⽬前我描述的⽹络结构只能检测⼀种局部特征的类型。为了完成图像识别我们需要超过⼀个的特征映射。所以⼀个完整的卷积层由⼏个不同的特征映射组成：</p>
+<p><img src="https://i.loli.net/2020/03/05/BN4S3tOyYd9xKkE.png" alt="QQ浏览器截图20200305104238.png"></p>
+<p>在这个例⼦中，有 3 个特征映射。每个特征映射定义为⼀个 5 × 5 共享权重和单个共享偏置的集合。其结果是⽹络能够检测 3 种不同的特征，每个特征都在整个图像中可检测。</p>
+<p><strong>注意这些同等说法：特征映射（或滤波器、核）</strong></p>
+<p>让我们快速看下已经学到的⼀些特征（图⽰说明的特征映射来⾃作者的训练卷积⽹络）：</p>
+<p><img src="https://i.loli.net/2020/03/05/2BIOgDWR7qbocdJ.png" alt="QQ浏览器截图20200305104712.png"></p>
+<p>这 20 幅图像对应于 20 个不同的特征映射（或滤波器、核）。每个映射有⼀幅 5×5 块的图像表⽰，对应于局部感受野中的 5 × 5 权重。⽩⾊块意味着⼀个⼩（典型的，更⼩的负数）权重，所以这样的特征映射对相应的输⼊像素有更⼩的响应。更暗的块意味着⼀个更⼤的权重，所以这样的特征映射对相应的输⼊像素有更⼤的响应。⾮常粗略地讲，上⾯的图像显⽰了卷积层作出响应的特征类型。</p>
+<p><strong>共享权重和偏置的⼀个很⼤的优点是，它⼤⼤减少了参与的卷积⽹络的参数。</strong></p>
+<p>对于每个特征映射我们需要 25 = 5 × 5 个共享权重，加上⼀个共享偏置。所以每个特征映射需要 26 个参数。如果我们有 20 个特征映射，那么总共有 20 × 26 = 520 个参数来定义卷积层。作为对⽐，假设我们有⼀个全连接的第⼀层，具有 784 = 28 × 28 个输⼊神经元，和⼀个相对适中的 30 个隐藏神经元，正如我们在本书之前的很多例⼦中使⽤的。总共有 784 × 30 个权重，加上额外的 30 个偏置，共有 23,550 个参数。换句话说，这个全连接的层有多达 40 倍于卷基层的参数。</p>
+<p>直观地，使⽤卷积层的平移不变性似乎很可能减少全连接模型中达到同样性能的参数数量。反过来，这将导致更快的卷积模型的训练，并最终，将有助于我们使⽤卷积层建⽴深度⽹络。</p>
+<p><strong>混合层</strong>： 除了刚刚描述的卷积层，卷积神经⽹络也包含混合层（pooling layers）。混合层通常紧接着在卷积层之后使⽤。它要做的是简化从卷积层输出的信息。</p>
+<p>详细地说，⼀个混合层取得从卷积层输出的每⼀个特征映射，并且从它们准备⼀个凝缩的特征映射。例如，混合层的每个单元可能概括了前⼀层的⼀个（⽐如）2 × 2 的区域。作为⼀个具体的例⼦，⼀个常⻅的混合的程序被称为最⼤值混合（max-pooling）。在最⼤值混合中，⼀个混合单元简单地输出其 2 × 2 输⼊区域的最⼤激活值，正如下图说明的：</p>
+<p><img src="https://i.loli.net/2020/03/05/CykqAXwcBOpWHsj.png" alt="QQ浏览器截图20200305105642.png"></p>
+<p>注意既然从卷积层有 24 × 24 个神经元输出，混合后我们得到 12 × 12 个神经元。</p>
+<p>正如上⾯提到的，卷积层通常包含超过⼀个特征映射。我们将最⼤值混合分别应⽤于每⼀个特征映射。所以如果有三个特征映射，组合在⼀起的卷积层和最⼤值混合层看起来像这样：</p>
+<p><img src="/2020/02/25/shen-jing-wang-luo-yu-shen-du-xue-xi/C:%5CUsers%5CGX%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1583377092479.png" alt="1583377092479"></p>
+<p>我们可以把最⼤值混合看作⼀种⽹络询问是否有⼀个给定的特征在⼀个图像区域中的哪个地⽅被发现的⽅式。然后它扔掉确切的位置信息。直观上，⼀旦⼀个特征被发现，它的确切位置并不如它相对于其它特征的⼤概位置重要。⼀个很⼤的好处是，这样可以有很多被更少地混合的特征，所以这有助于减少在以后的层所需的参数的数⽬。</p>
+<p>当然还有其它混合方式，例如<strong>L2混合</strong>（L2 pooling）。</p>
+<p><strong>综合在⼀起</strong>： 我们现在可以把这些思想都放在⼀起来构建⼀个完整的卷积神经⽹络。它和我们刚看到的架构相似，但是有额外的⼀层 10 个输出神经元，对应于 10 个可能的 MNIST 数字<br>（’0’，’1’，’2’ 等）：</p>
+<p><img src="/2020/02/25/shen-jing-wang-luo-yu-shen-du-xue-xi/C:%5CUsers%5CGX%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1583377290112.png" alt="1583377290112"></p>
+<p>这个⽹络从 28 × 28 个输⼊神经元开始，这些神经元⽤于对 MNIST 图像的像素强度进⾏编码。接着的是⼀个卷积层，使⽤⼀个 5×5 局部感受野和 3 个特征映射。其结果是⼀个 3×24×24隐藏特征神经元层。下⼀步是⼀个最⼤值混合层，应⽤于 2 × 2 区域，遍及 3 个特征映射。结果是⼀个 3 × 12 × 12 隐藏特征神经元层。</p>
+<p>⽹络中最后连接的层是⼀个全连接层。更确切地说，这⼀层将最⼤值混合层的每⼀个神经元连接到每⼀个输出神经元。这个全连接结构和我们之前章节中使⽤的相同。然⽽，注意上⾯的图⽰，为了简化，我只使⽤了⼀个箭头，⽽不是显⽰所有的连接。当然，你可以很容易想象到这些连接。</p>
+<p>这个卷积架构和之前章节中使⽤的架构相当不同。但是总体的描述是相似的：⼀个由很多简单的单元构成的⽹络，这些单元的⾏为由它们的权重和偏置确定。<strong>⽽总体的⽬标仍然是⼀样的：⽤训练数据来训练⽹络的权重和偏置，使得⽹络可以胜任分类输⼊数字。</strong></p>
+<p>特别的，正如本书中前⾯那样，我们将⽤随即梯度下降和反向传播训练我们的⽹络。</p>
+<h1 id="一些零散东西"><a href="#一些零散东西" class="headerlink" title="一些零散东西"></a>一些零散东西</h1><h2 id="Anaconda和Jupyter-notebook"><a href="#Anaconda和Jupyter-notebook" class="headerlink" title="Anaconda和Jupyter notebook"></a>Anaconda和Jupyter notebook</h2><ul>
+<li>Anaconda是包管理器和环境管理器。</li>
+<li>Jupyter notebook 可以将数据分析的代码、图像和文档全部组合到一个web文档中。</li>
+</ul>
+<h2 id="pip和pip3"><a href="#pip和pip3" class="headerlink" title="pip和pip3"></a>pip和pip3</h2><p>python 有python2和python3的区别<br>那么pip也有pip和pip3的区别<br>大概是这样的</p>
+<ol>
+<li>pip是python的包管理工具，pip和pip3版本不同，都位于Scripts\目录下：</li>
+<li>如果系统中只安装了Python2，那么就只能使用pip。</li>
+<li>如果系统中只安装了Python3，那么既可以使用pip也可以使用pip3，二者是等价的。</li>
+<li>如果系统中同时安装了Python2和Python3，则pip默认给Python2用，pip3指定给Python3用。</li>
+<li>重要：虚拟环境中，若只存在一个python版本，可以认为在用系统中pip和pip3命令都是相同的。</li>
+</ol>
+<h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><p><code>conda</code>可以理解为一个工具，也是一个可执行命令，其核心功能是包管理与环境管理。</p>
+<p>conda环境使用基本命令</p>
+<pre><code>conda update -n base conda        #update最新版本的conda
+conda create -n xxxx python=3.5   #创建python3.5的xxxx虚拟环境
+conda activate xxxx               #开启xxxx环境
+conda deactivate                  #关闭环境
+conda env list                    #显示所有的虚拟环境
+conda info --envs                 #显示所有的虚拟环境</code></pre>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/note/">#note</a> <a href="/tags/课程/">#课程</a> <a href="/tags/神经网络/">#神经网络</a> <a href="/tags/深度学习/">#深度学习</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-topn/">Hadoop学习之TopN</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-shu-ju-qu-chong/">Hadoop学习之数据去重</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/">基于Vue和SpringBoot前后端分离的图书管</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BF%86/">记忆</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/java/">java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E6%9C%89%E6%84%9F%E8%80%8C%E5%8F%91/">有感而发</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

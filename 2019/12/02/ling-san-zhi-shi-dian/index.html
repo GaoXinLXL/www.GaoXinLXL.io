@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="鹰击长空，鱼翔浅底，万类霜天竞自由">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="GaoXin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="零散知识点"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="鹰击长空，鱼翔浅底，万类霜天竞自由" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="GaoXin"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>零散知识点 - GaoXin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/12/02/ling-san-zhi-shi-dian/">
+                零散知识点
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/笔记/">笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="注解问题"><a href="#注解问题" class="headerlink" title="注解问题"></a>注解问题</h1><h2 id="PathVaribale"><a href="#PathVaribale" class="headerlink" title="PathVaribale"></a>PathVaribale</h2><blockquote>
+<p>获取url中的数据</p>
+</blockquote>
+<p>例：获取<code>Url=localhost:8080/hello/id</code>中的<code>id</code>值</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> <span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"id:"</span><span class="token operator">+</span>id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<a id="more"></a>
+
+<p>通过@PathVariable注解来获取URL中的参数时的前提条件是我们知道url的格式时怎么样的。</p>
+<p>一般情况下，url的格式为：<code>localhost:8080/hello?id=98</code>,这种情况下该如何来获取其<code>id</code>值呢,这就需要借助于<code>@RequestParam</code>来完成了</p>
+<h2 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h2><blockquote>
+<p>获取请求参数的值</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> String <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> <span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"id:"</span><span class="token operator">+</span>id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在浏览器中输入地址：localhost:8080/hello?id=1000可得结果。</p>
+<p><strong>若不想输入id，可设置默认值</strong></p>
+<p>例如，在参数里添加：</p>
+<pre class=" language-java"><code class="language-java">defaultValue <span class="token operator">=</span> <span class="token string">"1"</span></code></pre>
+<p>晓得有这么个东西就行，具体遇到再细究。</p>
+<h1 id="关于静态"><a href="#关于静态" class="headerlink" title="关于静态"></a>关于静态</h1><ul>
+<li>静态</li>
+</ul>
+<p>指以static关键字修饰的，包括类，方法，块，字段。</p>
+<ul>
+<li>非静态</li>
+</ul>
+<p>指没有用static 修饰的。</p>
+<h2 id="静态特点"><a href="#静态特点" class="headerlink" title="静态特点"></a>静态特点</h2><ol>
+<li><p>全局唯一，任何一次的修改都是全局性的影响</p>
+</li>
+<li><p>只加载一次，优先于非静态</p>
+</li>
+<li><p>使用方式上不依赖于实例对象。</p>
+</li>
+<li><p>生命周期属于类级别，从JVM 加载开始到JVM卸载结束。</p>
+</li>
+</ol>
+<h1 id="Java链表"><a href="#Java链表" class="headerlink" title="Java链表"></a>Java链表</h1><blockquote>
+<p>之所以来学习Java链表，是因为刷LeetCode时，遇到的第二道题就是链表题。</p>
+</blockquote>
+<p>关于链表的操作实际上并不陌生，因为考研的时候写过无数遍，关于链表的基本操作应该不再话下。不过一年前是用C语言来写链表，顺便学习了一些关于指针的知识。现在用Java来写，刚接触还有点不习惯，最大的原因竟然是Java帮我们简化了链表操作，不用碰指针了。</p>
+<h2 id="链表结点实体类"><a href="#链表结点实体类" class="headerlink" title="链表结点实体类"></a>链表结点实体类</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ListNode</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> val<span class="token punctuation">;</span>
+    ListNode next<span class="token punctuation">;</span>
+    <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        val <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="链表方法们-MyFun-java类"><a href="#链表方法们-MyFun-java类" class="headerlink" title="链表方法们(MyFun.java类)"></a>链表方法们(MyFun.java类)</h2><h3 id="创建一个单链表"><a href="#创建一个单链表" class="headerlink" title="创建一个单链表"></a>创建一个单链表</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//输入数组[1,2,3]，实际代表数字321。测试方法，就不考虑各种特殊情况了</span>
+<span class="token keyword">public</span> ListNode <span class="token function">creatList</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    ListNode dummyHead <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ListNode curr <span class="token operator">=</span> dummyHead<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        curr<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        curr <span class="token operator">=</span> curr<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    curr <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//为了证明成功，可以打印出来看看</span>
+    curr <span class="token operator">=</span> dummyHead<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>curr<span class="token operator">!=</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>curr<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        curr <span class="token operator">=</span> curr<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> dummyHead<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="打印链表"><a href="#打印链表" class="headerlink" title="打印链表"></a>打印链表</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printList</span><span class="token punctuation">(</span>ListNode L<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    ListNode curr <span class="token operator">=</span> L<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>curr<span class="token operator">!=</span>null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>curr<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        curr <span class="token operator">=</span> curr<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h3><blockquote>
+<p>这就是LeetCode的原题（第二题）</p>
+</blockquote>
+<blockquote>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。<br>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例：</p>
+<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> ListNode <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>ListNode l1<span class="token punctuation">,</span>ListNode l2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    ListNode dummyHead <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ListNode p <span class="token operator">=</span> l1<span class="token punctuation">,</span>q <span class="token operator">=</span> l2<span class="token punctuation">,</span>curr <span class="token operator">=</span> dummyHead<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> carry <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token operator">!=</span>null<span class="token operator">||</span>q<span class="token operator">!=</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token punctuation">(</span>p<span class="token operator">!=</span>null<span class="token punctuation">)</span><span class="token operator">?</span>p<span class="token punctuation">.</span>val<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token punctuation">(</span>q<span class="token operator">!=</span>null<span class="token punctuation">)</span><span class="token operator">?</span>q<span class="token punctuation">.</span>val<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> carry <span class="token operator">+</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+        carry <span class="token operator">=</span> sum <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        curr<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>sum <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        curr<span class="token operator">=</span>curr<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>null<span class="token punctuation">)</span> p<span class="token operator">=</span>p<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>q<span class="token operator">!=</span>null<span class="token punctuation">)</span> q<span class="token operator">=</span>q<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>carry<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
+        curr<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>carry<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> dummyHead<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>LeetCode标注的此题难度为中等，客观的说的确是这样。如果没有学习过链表的知识，或者就说是<strong>数据结构</strong>，单独地来做这道题，是不太容易理解的，凭什么要这样做？实际上，在学习了数据结构之后，这类问题应该是比较容易理解的。</p>
+<p>想起去年第一次用C语言写链表的日子，太迷茫了。不懂什么是传值，什么是传引用，为什么这个要用<code>&amp;</code>，另一个 又要用<code>*</code>，第一次见到<code>malloc</code>更是想破 了头，还有那个<code>free</code>……为了自己能够默写出一个能跑起来的单链表，足足花了一个月的时间！</p>
+<p>现在一年过去了，早已经不碰C语言了，今天用Java来写了一下，发现是真的简便到哭啊！有一说一，专门学习链表，或者说数据结构，还是用C更好，更能加深理解。毕竟，java都简化的差不多了。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/note/">#note</a> <a href="/tags/java/">#java</a> <a href="/tags/零散知识/">#零散知识</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-topn/">Hadoop学习之TopN</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/31/hadoop-xue-xi-zhi-shu-ju-qu-chong/">Hadoop学习之数据去重</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/30/ji-yu-vue-he-springboot-qian-hou-duan-fen-chi-de-tu-shu-guan-li-xi-tong/">基于Vue和SpringBoot前后端分离的图书管</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BF%86/">记忆</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/java/">java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E6%9C%89%E6%84%9F%E8%80%8C%E5%8F%91/">有感而发</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
